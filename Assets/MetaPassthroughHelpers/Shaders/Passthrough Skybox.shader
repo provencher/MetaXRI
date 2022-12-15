@@ -1,17 +1,5 @@
 ﻿Shader "Skybox/Passthrough Skybox"
 {
-    Properties
-    {
-        _Color1 ("Color 1", Color) = (1, 1, 1, 0)
-        _Color2 ("Color 2", Color) = (1, 1, 1, 0)
-        _UpVector ("Up Vector", Vector) = (0, 1, 0, 0)
-        _Intensity ("Intensity", Float) = 1.0
-        _Exponent ("Exponent", Float) = 1.0
-        // The properties below are used in the custom inspector.
-        _UpVectorPitch ("Up Vector Pitch", float) = 0
-        _UpVectorYaw ("Up Vector Yaw", float) = 0
-    }
-
     CGINCLUDE
 
     #include "UnityCG.cginc"
@@ -19,22 +7,14 @@
     struct appdata
     {
         float4 position : POSITION;
-        float3 texcoord : TEXCOORD0;
         UNITY_VERTEX_INPUT_INSTANCE_ID
     };
     
     struct v2f
     {
         float4 position : SV_POSITION;
-        float3 texcoord : TEXCOORD0;
         UNITY_VERTEX_OUTPUT_STEREO
     };
-    
-    half4 _Color1;
-    half4 _Color2;
-    half4 _UpVector;
-    half _Intensity;
-    half _Exponent;
     
     v2f vert (appdata v)
     {
@@ -45,14 +25,12 @@
         UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
         
         o.position = UnityObjectToClipPos (v.position);
-        o.texcoord = v.texcoord;
         return o;
     }
     
     fixed4 frag (v2f i) : COLOR
     {
-        half d = dot (normalize (i.texcoord), _UpVector) * 0.5f + 0.5f;
-        return lerp (_Color1, _Color2, pow (d, _Exponent)) * _Intensity;
+        return 0;
     }
 
     ENDCG
