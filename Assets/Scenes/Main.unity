@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 155cd025f1a55a448bb48462d7f5fab2, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9801024e380f8a546bdbb253f8df7ed2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.40364248, g: 0.5027944, b: 0.6502672, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2502,7 +2502,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1631016749872072128, guid: 47ae82ebb18ee2c4aa589d0ca7e4dd4f,
         type: 3}
-      propertyPath: requestEyeTrackingPermissionOnStartup
+      propertyPath: _localDimming
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631016749872072128, guid: 47ae82ebb18ee2c4aa589d0ca7e4dd4f,
+        type: 3}
+      propertyPath: isInsightPassthroughEnabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1631016749872072131, guid: 47ae82ebb18ee2c4aa589d0ca7e4dd4f,
